@@ -15,19 +15,19 @@ public class Main {
             boolean fourth = false;
             boolean fifth = false;
 
-            truthTable[i][0] = first;
-            truthTable[i][1] = second;
+            truthTable[i][cantidad-1] = !first;
+            truthTable[i][cantidad-2] = !second;
             if (cantidad > 2) {
                 third = (i & 4) == 0;
-                truthTable[i][2] = third;
+                truthTable[i][cantidad-3] = !third;
             }
             if (cantidad > 3) {
                 fourth = (i & 8) == 0;
-                truthTable[i][3] = fourth;
+                truthTable[i][cantidad-4] = !fourth;
             }
             if (cantidad > 4) {
                 fifth = (i & 16) == 0;
-                truthTable[i][4] = fifth;
+                truthTable[i][cantidad-5] = !fifth;
             }
 
             //System.out.println(first + "\t" + second + "\t" + third);
