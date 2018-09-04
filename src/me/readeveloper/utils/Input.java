@@ -10,12 +10,12 @@ public class Input {
             System.out.println("Ingresa la capacidad de la mochila:");
             capacity = scanner.nextInt();
             if (capacity <= 0) {
-                System.out.println("Capacidad no puede ser menor o igual a 0, se usará 10 como capacidad");
-                capacity = 10;
+                System.out.println("Capacidad no puede ser menor o igual a 0, se usará 20 como capacidad");
+                capacity = 20;
             }
         } catch (InputMismatchException e) {
-            System.out.println("Solo son validos numeros enteros.");
-            System.exit(0);
+            System.out.println("Solo son validos numeros enteros, se usará 20 como capacidad.");
+            capacity = 20;
         }
 
         return capacity;
@@ -31,12 +31,12 @@ public class Input {
                 quantity = 2;
             }
             if (quantity > 5) {
-                System.out.println("Cantidad de elementos es supera el maximo, se establecerá en 5");
+                System.out.println("Cantidad de elementos supera el maximo, se establecerá en 5");
                 quantity = 5;
             }
         } catch (InputMismatchException e) {
-            System.out.println("Solo son validos numeros enteros.");
-            System.exit(0);
+            System.out.println("Solo son validos numeros enteros, se establecerá la cantidad de objetos en 3.");
+            quantity = 3;
         }
 
         return quantity;
@@ -49,12 +49,12 @@ public class Input {
                 System.out.println("Ingresa peso para el elemento " + (i + 1));
                 weights[i] = scanner.nextDouble();
                 if (weights[i] <= 0) {
-                    System.out.println("No puede haber pesos menor o igual a 0. Se usará 1 como peso por defecto");
-                    weights[i] = 1;
+                    System.out.println("No puede haber pesos menor o igual a 0. Se usará 10 como peso por defecto");
+                    weights[i] = 10;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Solo son validos numeros.");
-                System.exit(0);
+                System.out.println("Solo son validos numeros, se usará 10 como peso por defecto.");
+                weights[i] = 10;
             }
         }
         weights[weights.length - 1] = 0;
@@ -69,12 +69,12 @@ public class Input {
                 System.out.println("Ingresa el valor para el elemento " + (i + 1));
                 values[i] = scanner.nextDouble();
                 if (values[i] <= 0) {
-                    System.out.println("No puede haber valores menor o igual a 0. Se usará 1 como valor por defecto");
-                    values[i] = 1;
+                    System.out.println("No puede haber valores menor o igual a 0. Se usará 10 como valor por defecto.");
+                    values[i] = 10;
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Solo son validos numeros.");
-                System.exit(0);
+                System.out.println("Solo son validos numeros. Se usará 10 como valor por defecto.");
+                values[i] = 10;
             }
         }
         values[values.length - 1] = 0;
